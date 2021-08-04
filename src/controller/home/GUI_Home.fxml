@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.home.HomeController">
+	<children>
+      <ImageView fx:id="imgv_panel" fitHeight="440.0" fitWidth="200.0" pickOnBounds="true" smooth="false" />
+		<BorderPane HBox.hgrow="ALWAYS">
+			<bottom>
+				<ToolBar rotate="180.0">
+					<items>
+						<HBox alignment="CENTER_RIGHT" rotate="180.0">
+							<children>
+								<Label text="Andrea Graziani - Università degli Studi di Roma Tor Vergata - BD 2016-17 - Version 1.0">
+									<effect>
+										<Blend />
+									</effect>
+								</Label>
+							</children>
+							<padding>
+								<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+							</padding>
+						</HBox>
+					</items>
+				</ToolBar>
+			</bottom>
+			<top>
+				<BorderPane BorderPane.alignment="CENTER">
+					<left>
+						<ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+					</left>
+					<center>
+						<ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+					</center>
+					<right>
+						<ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" BorderPane.alignment="CENTER">
+							<items>
+								<Button defaultButton="true" mnemonicParsing="false" onAction="#LogoutEventHandler" text="Logout" />
+								<Label fx:id="lbl_privilegeLevel" text="Label">
+									<effect>
+										<Blend />
+									</effect>
+									<padding>
+										<Insets left="20.0" />
+									</padding>
+								</Label>
+								<Label text="Privilege level:" />
+								<Label fx:id="lbl_accountNameSurname" text="Label">
+									<padding>
+										<Insets left="10.0" />
+									</padding>
+									<effect>
+										<Blend />
+									</effect>
+								</Label>
+								<Label text="Logged as:" />
+							</items>
+						</ToolBar>
+					</right>
+				</BorderPane>
+			</top>
+			<center>
+				<VBox BorderPane.alignment="CENTER">
+					<children>
+						<VBox>
+							<children>
+								<Label text="Basic tools">
+									<effect>
+										<Blend />
+									</effect>
+								</Label>
+								<Label layoutX="10.0" layoutY="114.0" text="Use controls below to view or search data stored into database." textFill="#a0a0a0" />
+								<Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#ViewSatelliteEventHandler" prefWidth="200.0" text="View registered satellites">
+									<VBox.margin>
+										<Insets top="10.0" />
+									</VBox.margin>
+								</Button>
+								<Button alignment="CENTER" mnemonicParsing="false" onAction="#ViewInstrumentEventHandler" prefWidth="200.0" text="View registered instruments">
+									<VBox.margin>
+										<Insets top="10.0" />
+									</VBox.margin>
+								</Button>
+								<Button alignment="CENTER" layoutX="10.0" layoutY="89.0" mnemonicParsing="false" onAction="#ViewMapEventHandler" prefWidth="200.0" text="View registered maps">
+									<VBox.margin>
+										<Insets top="10.0" />
+									</VBox.margin>
+								</Button>
+								<Button alignment="CENTER" mnemonicParsing="false" onAction="#ViewClumpEventHandler" prefWidth="200.0" text="View registered Clumps">
+									<VBox.margin>
+										<Insets top="10.0" />
+									</VBox.margin>
+								</Button>
+								<Button alignment="CENTER" mnemonicParsing="false" onAction="#ViewSourceEventHandler" prefWidth="200.0" text="View registered Sources">
+									<VBox.margin>
+										<Insets top="10.0" />
+									</VBox.margin>
+								</Button>
+								<Separator prefWidth="200.0">
+									<VBox.margin>
+										<Insets top="10.0" />
+									</VBox.margin>
+								</Separator>
+								<Label layoutX="10.0" layoutY="10.0" text="Administrative tools">
+									<effect>
+										<Blend />
+									</effect>
+								</Label>
+								<Label layoutX="10.0" layoutY="27.0" text="To use these controls is required an 'Administrator' privilege level." textFill="#a0a0a0" />
+								<Button fx:id="btn_registerAccount" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#RegisterAccountEventHandler" prefWidth="200.0" text="Register new account">
+									<VBox.margin>
+										<Insets top="10.0" />
+									</VBox.margin>
+								</Button>
+								<Button fx:id="btn_importData" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#ImportDataEventHandler" prefWidth="200.0" text="Import data">
+									<VBox.margin>
+										<Insets top="10.0" />
+									</VBox.margin>
+								</Button>
+							</children>
+							<VBox.margin>
+								<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+							</VBox.margin>
+						</VBox>
+					</children>
+				</VBox>
+			</center>
+		</BorderPane>
+		</children>
+</HBox>

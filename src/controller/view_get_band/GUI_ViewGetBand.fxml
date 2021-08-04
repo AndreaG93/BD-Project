@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.view_get_band.ViewGetBandController">
+         <bottom>
+      <ToolBar rotate="180.0">
+         <items>
+                  <HBox alignment="CENTER_RIGHT" rotate="180.0">
+                     <children>
+                  <Button fx:id="btn_createBand" mnemonicParsing="false" onAction="#createBandEventHandler" text="Create new Band">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btn_cancel" mnemonicParsing="false" onAction="#cancelEventHandler" text="Cancel">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                        
+                              <Button fx:id="btn_finish" alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#finishEventHandler" text="Add" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+         </items>
+      </ToolBar>
+         </bottom>
+   <top>
+      <VBox>
+         <children>
+            <Label text="Use the form below to add a new band to your satellite." textFill="#a0a0a0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </top>
+   <center>
+      <ListView fx:id="lstv_band" prefHeight="200.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </ListView>
+   </center>
+      </BorderPane>

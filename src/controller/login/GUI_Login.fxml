@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.LoginController">
+         <center>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="177.0" minWidth="10.0" prefWidth="97.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="270.0" minWidth="10.0" prefWidth="267.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Password" GridPane.rowIndex="1" />
+                  <Label text="User-id" />
+                  <TextField fx:id="txtfld_username" GridPane.columnIndex="1" />
+                  <PasswordField fx:id="txtfld_password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+            </GridPane>
+         </center>
+         <bottom>
+      <ToolBar rotate="180.0">
+         <items>
+                  <HBox alignment="CENTER_RIGHT" rotate="180.0">
+                     <children>
+                        
+                              <Button fx:id="btn_submit" alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#loginEventHandler" text="Submit" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+         </items>
+      </ToolBar>
+         </bottom>
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Use the form below to sign in." textFill="#a0a0a0">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+      </BorderPane>

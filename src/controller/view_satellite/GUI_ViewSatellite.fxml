@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="root" prefHeight="350.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.view_satellite.ViewSatelliteController">
+         <bottom>
+      <ToolBar rotate="180.0">
+         <items>
+                  <HBox alignment="CENTER_RIGHT" rotate="180.0">
+                     <children>
+                  <Button fx:id="btn_remove" alignment="CENTER" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#removeEventHandler" text="Remove">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#exitEventHandler" text="Exit">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+         </items>
+      </ToolBar>
+         </bottom>
+   <top>
+      <VBox>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <children>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+              <items>
+                <Button fx:id="btn_registerNewSatellite" disable="true" mnemonicParsing="false" onAction="#registerNewSatelliteEventHandler" text="Register a new satellite" />
+              </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <Pagination fx:id="pgnt_satellite" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+      </BorderPane>

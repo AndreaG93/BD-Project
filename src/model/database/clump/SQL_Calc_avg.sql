@@ -1,0 +1,1 @@
+SELECT AVG(clump_mass) FROM clump

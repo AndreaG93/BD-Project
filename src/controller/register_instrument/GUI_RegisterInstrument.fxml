@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.register_instrument.RegisterInstrumentController">
+   <children>
+      <BorderPane HBox.hgrow="ALWAYS">
+      	<bottom>
+            <ToolBar rotate="180.0">
+               <items>
+            		<HBox alignment="BOTTOM_RIGHT" rotate="180.0">
+            			<children>
+            				<Button cancelButton="true" mnemonicParsing="false" onAction="#closeEventHandler" text="Cancel">
+            					<HBox.margin>
+            						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            					</HBox.margin>
+            				</Button>
+            				<Button defaultButton="true" mnemonicParsing="false" onAction="#finishEventHandler" prefHeight="25.0" prefWidth="77.0" text="Finish">
+            					<HBox.margin>
+            						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            					</HBox.margin>
+            				</Button>
+            			</children>
+            		</HBox>
+               </items>
+            </ToolBar>
+      	</bottom>
+         <top>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Instrument registration">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <effect>
+                        <Blend />
+                     </effect>
+                  </Label>
+                  <Label text="Use the form below to register a new instrument. (*) Required fields." textFill="#a0a0a0">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox>
+                     <children>
+      										<VBox>
+      											<children>
+      												<Label text="Name *" />
+      												<TextField fx:id="txtfld_name" prefWidth="230.0" promptText="Insert name..." />
+      											</children>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+      										</VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Map*" />
+                              <ComboBox fx:id="cmb_map" prefWidth="150.0" promptText="Select map..." />
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox>
+                     <children>
+                        <Separator prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Separator>
+                        <Label text="Band">
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </Label>
+                        <Label text="Specify bands supported by instrument." textFill="#a0a0a0">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#addBandEventHandler" prefWidth="60.0" text="Add">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#removeBandEventHandler" prefWidth="60.0" text="Remove" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </VBox>
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <ListView fx:id="lstv_band" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</HBox>

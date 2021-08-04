@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="root" minHeight="200.0" minWidth="200.0" prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.search_clump.SearchClumpController">
+	<bottom>
+		<ToolBar rotate="180.0">
+			<items>
+				<HBox alignment="CENTER_RIGHT" rotate="180.0">
+					<children>
+						<Button defaultButton="true" mnemonicParsing="false" onAction="#CloseEventHandler" text="Exit" />
+					</children>
+					<padding>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</padding>
+				</HBox>
+			</items>
+		</ToolBar>
+	</bottom>
+	<left>
+		<Accordion BorderPane.alignment="CENTER" expandedPane="$myPane">
+			<panes>
+				<TitledPane fx:id="myPane" animated="false" collapsible="false">
+					<content>
+                  <ScrollPane prefViewportHeight="610.0" prefViewportWidth="254.0" prefWidth="265.0">
+                     <content>
+      						<VBox>
+      							<padding>
+      								<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      							</padding>
+      							<children>
+                            <Button defaultButton="true" mnemonicParsing="false" onAction="#updateViewEventHandler" prefWidth="220.0" text="Search...">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Separator />
+      								<VBox>
+      									<children>
+      										<Label text="Select a map">
+      											<effect>
+      												<Blend />
+      											</effect>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+      										</Label>
+      										<Label text="Use the control below to select a map." textFill="#a0a0a0" />
+      										<ComboBox fx:id="cmbx_selectMap">
+      											<VBox.margin>
+      												<Insets />
+      											</VBox.margin>
+      										</ComboBox>
+      									</children>
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+      								</VBox>
+      								<Separator>
+      									<VBox.margin>
+      										<Insets bottom="10.0" top="10.0" />
+      									</VBox.margin>
+      								</Separator>
+      								<HBox>
+      									<children>
+      										<RadioButton fx:id="rdbtn_searchAllClump" mnemonicParsing="false" onAction="#enableOptionEventHandler" selected="true">
+      											<toggleGroup>
+      												<ToggleGroup fx:id="ClumpSearchOption" />
+      											</toggleGroup>
+      										</RadioButton>
+      										<VBox fx:id="vbox_all">
+      											<children>
+      												<Label text="Search all Clumps">
+      													<effect>
+      														<Blend />
+      													</effect>
+      												</Label>
+      												<Label text="It is used to search all Clump stored in DB." textFill="#a0a0a0" />
+      											</children>
+      										</VBox>
+      									</children>
+      									<VBox.margin>
+      										<Insets bottom="10.0" />
+      									</VBox.margin>
+      								</HBox>
+      								<HBox layoutX="20.0" layoutY="20.0">
+      									<children>
+      										<RadioButton fx:id="rdbtn_searchClumpById" mnemonicParsing="false" onAction="#enableOptionEventHandler" toggleGroup="$ClumpSearchOption" />
+      										<VBox fx:id="vbox_id">
+      											<children>
+      												<Label text="Search by Clump ID">
+      													<effect>
+      														<Blend />
+      													</effect>
+      													<VBox.margin>
+      														<Insets />
+      													</VBox.margin>
+      												</Label>
+      												<Label text="It is used to search a Clump by ID." textFill="#a0a0a0">
+      													<VBox.margin>
+      														<Insets />
+      													</VBox.margin>
+      												</Label>
+      												<TextField fx:id="txtf_idClump" promptText="Insert an ID..." />
+      											</children>
+      											<HBox.margin>
+      												<Insets bottom="10.0" />
+      											</HBox.margin>
+      										</VBox>
+      									</children>
+      								</HBox>
+      								<HBox layoutX="20.0" layoutY="47.0">
+      									<children>
+      										<RadioButton fx:id="rdbtn_searchClumpBydensity" mnemonicParsing="false" onAction="#enableOptionEventHandler" toggleGroup="$ClumpSearchOption" />
+      										<VBox fx:id="vbox_density">
+      											<children>
+      												<Label text="Search Clump by density">
+      													<effect>
+      														<Blend />
+      													</effect>
+      													<VBox.margin>
+      														<Insets />
+      													</VBox.margin>
+      												</Label>
+      												<Label text="It is used to search all Clumps that can " textFill="#a0a0a0">
+      													<VBox.margin>
+      														<Insets />
+      													</VBox.margin>
+      												</Label>
+      												<Label layoutX="10.0" layoutY="27.0" text="host a massive star." textFill="#a0a0a0" />
+      											</children>
+      											<HBox.margin>
+      												<Insets bottom="10.0" />
+      											</HBox.margin>
+      										</VBox>
+      									</children>
+      								</HBox>
+      								<HBox layoutX="20.0" layoutY="116.0">
+      									<children>
+      										<RadioButton fx:id="rdbtn_searchClumpByRegion" mnemonicParsing="false" onAction="#enableOptionEventHandler" toggleGroup="$ClumpSearchOption" />
+      										<VBox fx:id="vbox_region">
+      											<children>
+      												<Label text="Search Clump by region">
+      													<effect>
+      														<Blend />
+      													</effect>
+      													<VBox.margin>
+      														<Insets />
+      													</VBox.margin>
+      												</Label>
+      												<Label text="It is used to search all Clumps in a region." textFill="#a0a0a0">
+      													<VBox.margin>
+      														<Insets />
+      													</VBox.margin>
+      												</Label>
+      												<Label text="Result will be sorted by the distance from " textFill="#a0a0a0">
+      													<VBox.margin>
+      														<Insets />
+      													</VBox.margin>
+      												</Label>
+      												<Label text="the starting point." textFill="#a0a0a0" />
+      												<Label layoutX="10.0" layoutY="10.0" text="Specify starting point">
+      													<effect>
+      														<Blend />
+      													</effect>
+      												</Label>
+      												<HBox>
+      													<children>
+      														<Label text="X:">
+      															<effect>
+      																<Blend />
+      															</effect>
+      															<HBox.margin>
+      																<Insets right="5.0" />
+      															</HBox.margin>
+      														</Label>
+      														<TextField fx:id="txtf_startingPointX" />
+      													</children>
+      													<VBox.margin>
+      														<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      													</VBox.margin>
+      												</HBox>
+      												<HBox>
+      													<children>
+      														<Label text="Y:">
+      															<effect>
+      																<Blend />
+      															</effect>
+      															<HBox.margin>
+      																<Insets right="5.0" />
+      															</HBox.margin>
+      														</Label>
+      														<TextField fx:id="txtf_startingPointY" />
+      													</children>
+      													<VBox.margin>
+      														<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      													</VBox.margin>
+      												</HBox>
+      												<HBox>
+      													<children>
+      														<RadioButton fx:id="rdbtn_searchClumpSquare" mnemonicParsing="false" selected="true">
+      															<toggleGroup>
+      																<ToggleGroup fx:id="ClumpSearchOptionRegion" />
+      															</toggleGroup>
+      														</RadioButton>
+      														<VBox>
+      															<children>
+      																<Label text="Search in a square">
+      																	<effect>
+      																		<Blend />
+      																	</effect>
+      																	<VBox.margin>
+      																		<Insets />
+      																	</VBox.margin>
+      																</Label>
+      																<TextField fx:id="txtf_sideLengthClump" promptText="Length of side..." />
+      															</children>
+      															<HBox.margin>
+      																<Insets bottom="10.0" />
+      															</HBox.margin>
+      														</VBox>
+      													</children>
+      												</HBox>
+      												<HBox>
+      													<children>
+      														<RadioButton fx:id="rdbtn_searchClumpCircle" mnemonicParsing="false" toggleGroup="$ClumpSearchOptionRegion" />
+      														<VBox>
+      															<children>
+      																<Label text="Search in a circle">
+      																	<effect>
+      																		<Blend />
+      																	</effect>
+      																	<VBox.margin>
+      																		<Insets />
+      																	</VBox.margin>
+      																</Label>
+      																<TextField fx:id="txtf_radiusLengthClump" promptText="Length of radius..." />
+      															</children>
+      															<HBox.margin>
+      																<Insets bottom="10.0" />
+      															</HBox.margin>
+      														</VBox>
+      													</children>
+      												</HBox>
+      											</children>
+      											<HBox.margin>
+      												<Insets bottom="10.0" />
+      											</HBox.margin>
+      										</VBox>
+      									</children>
+      								</HBox>
+      							</children>
+      						</VBox>
+                     </content>
+                  </ScrollPane>
+					</content>
+				
+				</TitledPane>
+			</panes>
+		</Accordion>
+	</left>
+   <right>
+      <Accordion BorderPane.alignment="CENTER" expandedPane="$myMassDataPane">
+         <panes>
+          <TitledPane fx:id="myMassDataPane" animated="false" collapsible="false" prefHeight="645.0" prefWidth="209.0">
+               <content>
+                  <VBox>
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label text="Mean">
+                                 <effect>
+                                    <Blend />
+                                 </effect>
+                              </Label>
+                              <TextField fx:id="txt_mean" editable="false" text="Calculation in progress..." />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="20.0" layoutY="20.0">
+                           <children>
+                              <Label text="Standard deviation">
+                                 <effect>
+                                    <Blend />
+                                 </effect>
+                              </Label>
+                              <TextField fx:id="txt_standardDeviation" editable="false" text="Calculation in progress..." />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="20.0" layoutY="62.0">
+                           <children>
+                              <Label text="Median">
+                                 <effect>
+                                    <Blend />
+                                 </effect>
+                              </Label>
+                              <TextField fx:id="txt_median" editable="false" text="Calculation in progress..." />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="20.0" layoutY="104.0">
+                           <children>
+                              <Label text="Median absolute deviation">
+                                 <effect>
+                                    <Blend />
+                                 </effect>
+                              </Label>
+                              <TextField fx:id="txt_median_absolute_deviation" editable="false" text="Calculation in progress..." />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </content>
+          </TitledPane>
+         </panes>
+      </Accordion>
+   </right>
+</BorderPane>

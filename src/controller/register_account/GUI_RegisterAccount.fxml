@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<HBox prefHeight="408.0" prefWidth="667.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.register_account.RegisterAccountController">
+   <children>
+      <ImageView fx:id="imgv_panel" fitHeight="415.0" fitWidth="186.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../../panel.png" />
+         </image></ImageView>
+      <BorderPane prefHeight="448.0" prefWidth="451.0" HBox.hgrow="ALWAYS">
+      	<bottom>
+            <ToolBar rotate="180.0">
+               <items>
+            		<HBox alignment="BOTTOM_RIGHT" rotate="180.0">
+            			<children>
+                        <Button fx:id="btn_back" mnemonicParsing="false" onAction="#backEventHandler" text="&lt; Back">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btn_next" mnemonicParsing="false" onAction="#nextEventHandler" text="Next &gt;">
+                           <HBox.margin>
+                              <Insets bottom="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+            				<Button fx:id="btn_cancel" cancelButton="true" mnemonicParsing="false" onAction="#closeEventHandler" text="Cancel">
+            					<HBox.margin>
+            						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            					</HBox.margin>
+            				</Button>
+            				<Button fx:id="btn_finish" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#finishEventHandler" text="Confirm registration">
+            					<HBox.margin>
+            						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            					</HBox.margin>
+            				</Button>
+            			</children>
+            		</HBox>
+               </items>
+            </ToolBar>
+      	</bottom>
+         <center>
+            <StackPane prefHeight="347.0" prefWidth="481.0" BorderPane.alignment="CENTER">
+               <children>
+      								<VBox fx:id="vbx_page_1" prefHeight="351.0" prefWidth="481.0">
+      									<children>
+                        <Label text="Account's registration">
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </Label>
+      										<VBox prefHeight="0.0" prefWidth="409.0">
+      											<children>
+      												<Label text="Username" />
+                              <Label text="Use at least six characters." textFill="#a0a0a0" />
+      												<TextField fx:id="txtfld_username" />
+      											</children>
+      											<VBox.margin>
+      												<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      											</VBox.margin>
+      										</VBox>
+      										<VBox>
+      											<children>
+      												<Label text="Password" />
+                              <Label text="Use at least one lowercase letter, one uppercase letter, one numeral, and six characters." textFill="#a0a0a0" />
+      												<PasswordField fx:id="txtfld_password" />
+                              <HBox>
+                                 <children>
+                                    <ProgressBar fx:id="prgsbr_passwordRobustness" prefWidth="200.0" progress="0.0" />
+                                    <Label fx:id="lbl_passwordRobustness">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <effect>
+                                          <Blend />
+                                       </effect>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+      											</children>
+      											<VBox.margin>
+      												<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      											</VBox.margin>
+      										</VBox>
+                        <VBox>
+                           <children>
+      												<Label text="Confirm your password" />
+      												<PasswordField fx:id="txtfld_password_2" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Account Type">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="cmbx_accountType" prefHeight="25.0" prefWidth="174.0" promptText="Select...">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                           </children>
+                        </VBox>
+      									</children>
+      								</VBox>
+      								<VBox fx:id="vbx_page_2" visible="false">
+      									<children>
+                        <Label text="Personal information">
+                           <effect>
+                              <Blend />
+                           </effect>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <VBox>
+                           <children>
+                              <HBox>
+                                 <children>
+            												<VBox>
+            													<children>
+            														<Label text="Name" />
+            														<TextField fx:id="txtfld_name" />
+            													</children>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+            												</VBox>
+            												<VBox>
+            													<children>
+            														<Label text="Surname" />
+            														<TextField fx:id="txtfld_surname" />
+            													</children>
+            												</VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox prefHeight="0.0" prefWidth="409.0">
+                           <children>
+                              <Label text="Email a valid email address" />
+                              <TextField fx:id="txtfld_email" prefHeight="25.0" prefWidth="401.0" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+      									</children>
+      								</VBox>
+                  <VBox fx:id="vbx_page_3" layoutX="10.0" layoutY="10.0" visible="false">
+                     <children>
+                        <Label text="Data summary">
+                           <effect>
+                              <Blend />
+                           </effect>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="All the data needed to register new account has been entered." textFill="#a0a0a0">
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="47.0" text="Press &quot;Back&quot; button to correct any errors. " textFill="#a0a0a0">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="47.0" text="Press &quot;Confirm registration&quot; button to complete account registration." textFill="#a0a0a0">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="203.0" minWidth="42.0" prefWidth="101.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="419.0" minWidth="10.0" prefWidth="360.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Name:">
+                                 <effect>
+                                    <Blend />
+                                 </effect>
+                              </Label>
+                              <Label text="Surname:" GridPane.rowIndex="1">
+                                 <effect>
+                                    <Blend />
+                                 </effect>
+                              </Label>
+                              <Label text="Email:" GridPane.rowIndex="2">
+                                 <effect>
+                                    <Blend />
+                                 </effect>
+                              </Label>
+                              <Label text="Username:" GridPane.rowIndex="3">
+                                 <effect>
+                                    <Blend />
+                                 </effect>
+                              </Label>
+                              <Label fx:id="summary_name" text="Label" GridPane.columnIndex="1" />
+                              <Label fx:id="summary_surname" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="summary_email" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="summary_username" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Password:" GridPane.rowIndex="4">
+                                 <effect>
+                                    <Blend />
+                                 </effect>
+                              </Label>
+                              <Label fx:id="summary_password" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label text="Account Type:" GridPane.rowIndex="5">
+                                 <effect>
+                                    <Blend />
+                                 </effect>
+                              </Label>
+                              <Label fx:id="summary_type" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+</HBox>

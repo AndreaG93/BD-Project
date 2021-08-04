@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<HBox prefHeight="671.0" prefWidth="863.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.register_satellite.RegisterSatelliteController">
+   <children>
+      <ImageView fx:id="imgv_sidePanel" fitHeight="703.0" fitWidth="187.0" pickOnBounds="true" smooth="false" />
+      <BorderPane HBox.hgrow="ALWAYS">
+            	<bottom>
+                  <ToolBar rotate="180.0">
+                     <items>
+                  		<HBox alignment="BOTTOM_RIGHT" rotate="180.0">
+                  			<children>
+                  				<Button cancelButton="true" mnemonicParsing="false" onAction="#cancelEventHandler" text="Cancel">
+                  					<HBox.margin>
+                  						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  					</HBox.margin>
+                  				</Button>
+                  				<Button defaultButton="true" mnemonicParsing="false" onAction="#finishEventHandler" prefHeight="25.0" prefWidth="77.0" text="Finish">
+                  					<HBox.margin>
+                  						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  					</HBox.margin>
+                  				</Button>
+                  			</children>
+                  		</HBox>
+                     </items>
+                  </ToolBar>
+            	</bottom>
+               <center>
+                  
+            								<VBox fx:id="vbx_page_1">
+            									<children>
+                  <Label text="Satellite registration">
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                              <Label text="Use the form below to register a new satellite. (*) Required fields." textFill="#a0a0a0">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Label>
+            										<VBox>
+            											<children>
+            												<Label text="Name *" />
+            												<TextField fx:id="txtfld_name" promptText="Insert satellite's name..." />
+            											</children>
+            											<VBox.margin>
+            												<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            											</VBox.margin>
+            										</VBox>
+                              <HBox>
+                                 <children>
+                                    <VBox>
+                                       <children>
+                                          <Label text="First mission date * ">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <DatePicker fx:id="dtpkr_firstMissionDate" promptText="Insert date...">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </DatePicker>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <VBox layoutX="10.0" layoutY="10.0">
+                                       <children>
+                                          <Label text="Last mission date">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <DatePicker fx:id="dtpkr_lastMissionDate" promptText="Insert date...">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </DatePicker>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                  <HBox>
+                     <children>
+                        <VBox>
+                           <children>
+                  												<Label text="Instruments">
+                                 <effect>
+                                    <Blend />
+                                 </effect>
+                              </Label>
+                              <Separator prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Separator>
+                              <HBox>
+                                 <children>
+                                    <VBox>
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#removeInstrumentEventHandler" prefWidth="60.0" text="Remove">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" right="10.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                                      <Button mnemonicParsing="false" onAction="#insertInstrumentEventHandler" prefWidth="60.0" text="Add" />
+                                       </children>
+                                    </VBox>
+                                    <ListView fx:id="lstv_instruments" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox layoutX="20.0" layoutY="20.0">
+                           <children>
+                              <Label text="Agency">
+                                 <effect>
+                                    <Blend />
+                                 </effect>
+                              </Label>
+                              <Separator prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Separator>
+                              <HBox>
+                                 <children>
+                                    <VBox>
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#removeAgencyEventHandler" prefWidth="60.0" text="Remove">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" right="10.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#insertAgencyEventHandler" prefWidth="60.0" text="Add" />
+                                       </children>
+                                    </VBox>
+                                    <ListView fx:id="lstv_agency" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+            									</children>
+            								</VBox>
+                    
+               </center>
+            </BorderPane>
+   </children>
+</HBox>

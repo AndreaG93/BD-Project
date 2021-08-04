@@ -1,0 +1,1 @@
+SELECT stddev_pop(clump_mass) FROM clump

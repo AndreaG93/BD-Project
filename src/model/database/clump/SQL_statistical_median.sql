@@ -1,0 +1,1 @@
+SELECT my_statistical_median(clump_mass) AS median_value FROM Clump;
